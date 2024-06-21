@@ -59,7 +59,7 @@ class OpenAIChatCompletionChoiceMessageContentItemModel {
     String imageBase64,
   ) {
     return OpenAIChatCompletionChoiceMessageContentItemModel._(
-      type: 'image_base64',
+      type: 'image_url',
       imageBase64: imageBase64,
     );
   }
@@ -70,8 +70,7 @@ class OpenAIChatCompletionChoiceMessageContentItemModel {
       "type": type,
       if (text != null) "text": text,
       if (imageUrl != null) "image_url": imageUrl,
-      if (imageBase64 != null)
-        "image_url": {"url": "data:image/jpeg;base64,${imageBase64}"}
+      if (imageBase64 != null) "image_url": {"url": "data:image/jpeg;base64,${imageBase64}"},
     };
   }
 
